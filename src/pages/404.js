@@ -1,25 +1,33 @@
-import React from "react";
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { Link } from 'gatsby'
+import Layout from '../components/Layout/layout'
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import abductionIllustration from "../images/abduction-illustration.svg";
+export const NotFoundPageTemplate = ({}) => (
+  <>
+    <h2><span role="img" aria-label="Thinking face emoji">🤔</span></h2>
+    <p>We couldn't cook up a page for the URL you entered!</p>
+    <p>Please check the URL, or use the menu to find the page you're after.</p>
+    <Link className="btn" to="/">
+      Back to home
+    </Link>
+  </>
+ )
 
-function NotFoundPage() {
+const NotFoundPage = ({}) => {
   return (
-    <Layout>
-      <SEO title="404: Not found" />
-      <div>
-        <img
-          alt="Ghost getting abducted by aliens"
-          className="block mx-auto w-1/2"
-          src={abductionIllustration}
-        />
-        <h2 className="bg-yellow-400 text-2xl font-bold inline-block my-8 p-3">
-          Looks like this page is a ghost that got abducted by aliens...
-        </h2>
-      </div>
-    </Layout>
-  );
+    <>   
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>404</title>
+        <meta name="description" content="This is the 404 page" />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+      <Layout>
+        <NotFoundPageTemplate />
+      </Layout>
+    </>
+  )
 }
 
-export default NotFoundPage;
+export default NotFoundPage

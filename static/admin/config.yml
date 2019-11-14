@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: master
+editor:
+  preview: false
+media_folder: static/img
+public_folder: /img
+logo_url: /img/cms-logo.png
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Home Page"
+        name: "index-page"
+        fields:
+          - {label: Google Meta Data, name: meta, widget: object, collapsed: true, fields: [
+              {label: Meta Title, name: metaTitle, widget: text},
+              {label: Meta Description, name: metaDescription, widget: text},
+              {label: Robots, name: robots, widget: text}
+          ]}

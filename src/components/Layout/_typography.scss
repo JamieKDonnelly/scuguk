@@ -1,0 +1,124 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,300,600");
+
+@font-face{
+    font-family: 'heading';
+    src: url('/static/fonts/light.eot');
+    src: url('/fonts/light.eot?#iefix') format('embedded-opentype'), 
+    url('/fonts/light.woff') format('woff'), 
+    url('/fonts/light.ttf') format('truetype'), 
+    url('/fonts/light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+body, html{ 
+    font-size: 100%;
+    @include tablet{
+        font-size: 96%;
+    }
+    @include mobile{
+        font-size: 92%; 
+    }
+}
+
+h1, h2, h3{
+    font-family: 'heading';
+}
+
+h1{      
+    display: inline-block;
+    margin : 0;
+    position: relative;
+    font-size: 3rem;
+    @include tablet{
+        font-size: 2.8rem;
+    }
+    @include mobile{
+        font-size: 2.2rem; 
+    }
+    @include mobile-small{
+        font-size: 2rem; 
+    }
+}
+
+h2{    
+    font-size: 2.4rem;
+    @include tablet{
+        font-size: 2.2rem;
+    }
+    @include mobile{
+        font-size: 1.8rem; 
+    }
+}
+
+h3{    
+    color: lime;
+    line-height: 1.4;
+    font-size: 1.6rem;
+    @include tablet{
+        font-size: 1.4rem;
+    }
+    @include mobile{
+        font-size: 1.2rem; 
+    }
+}
+
+p{
+    margin: 20px 0;
+}
+
+a{
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.btn{
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    text-decoration: none;
+    outline: none;
+    background: transparent;
+    border: 2px solid lime;
+    @include transition;
+
+    &:hover{
+        background: lime;
+        color: white;
+        cursor: pointer;
+    }
+
+    &--ghost{
+        background: transparent;
+        border: 2px solid white;
+        color: inherit;
+        &:hover{
+            background: white;
+            border: 2px solid #eee;
+            color: lime;
+        }
+    }
+}
