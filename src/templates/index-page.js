@@ -5,16 +5,27 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout/layout'
 
 export const IndexPageTemplate = ({
+  heroImage,
   heading,
   intro
 }) => (
   <>
-    <section>
-      <div class="container">
-        <h1>{heading}</h1>
-        <p>{intro}</p>        
-      </div>
-    </section>  
+    <section className="hero" style={{backgroundImage: `url(${heroImage})`}}>
+    </section>
+    <main>
+      <section className="theme__box theme__box--small">
+        <div className="container">
+          <h1>{heading}</h1>
+          <p>{intro}</p>
+        </div>
+      </section> 
+      <section className="theme__box">
+        <div className="container">
+          <h1>{heading}</h1>
+          <p>{intro}</p>
+        </div>
+      </section> 
+    </main>    
   </>
 )
 
@@ -29,7 +40,8 @@ const IndexPage = ({ data }) => {
       <Layout>
         <IndexPageTemplate
           intro={frontmatter.intro}
-          subTitle={frontmatter.heading}
+          heading={frontmatter.heading}
+          heroImage={frontmatter.heroImage}
         />
       </Layout>
     </>
@@ -39,6 +51,7 @@ const IndexPage = ({ data }) => {
 IndexPageTemplate.propTypes = {
   intro: PropTypes.string,
   heading: PropTypes.string,  
+  heroImage: PropTypes.string
 }
 
 IndexPage.propTypes = {
@@ -59,6 +72,7 @@ export const pageQuery = graphql`
           metaTitle
           metaDescription
         }
+        heroImage
         intro
         heading
       }

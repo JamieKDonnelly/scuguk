@@ -1,7 +1,7 @@
-@import '../../settings/index.scss';
+@import '../settings/index.scss';
 
 .header {   
-    padding: 2rem 0;
+    padding: 1rem 0;
     top: 0;    
     left: 0;
     right: 0;
@@ -33,6 +33,9 @@
 .nav{    
     margin: auto;
     margin-right: 0;
+    @include tablet(){
+        display: none;
+    }
     &__items{
         display: flex;
         align-items: center;
@@ -40,31 +43,38 @@
         padding: 0;
         li{
             list-style-type: none;
-            padding: 0 2vw;
+            padding: 0 2rem;
         }
         a{
-            color: white;
+            display: block;
+            padding: 2rem 0;
             text-decoration: none;
             position: relative;
+            color: $sc_black;
             @include transition();
-            &:after{
-                content: "";
-                width: 0;
-                height: 1px; 
-                background: lime;
-                position: absolute;
-                left: 50%;
-                bottom: -2px;
-                transform: translateX(-50%);
-                @include transition();
+            span{
+                display: block;
+                position: relative;
+                &:after{
+                    content: "";
+                    width: 0;
+                    height: 1px; 
+                    background: $sc_red;
+                    position: absolute;
+                    left: 50%;
+                    bottom: -3px;
+                    transform: translateX(-50%);
+                    @include transition();
+                }
             }
             &:hover{
-                &:after{
+                text-shadow: 0px 0px 1px $sc_black;
+                span:after{
                     width: 100%;
                 }
             }
             &.active{
-                &:after{
+                span:after{
                     width: 100%;
                 }
             }
