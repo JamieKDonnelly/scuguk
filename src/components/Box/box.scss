@@ -1,0 +1,42 @@
+@import '../../theme/settings/index.scss';
+
+.theme__box{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    max-width: 100%;      
+    min-height: 80vh; 
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    padding: 8rem $gutterDesktop;
+    position: relative;
+    box-shadow: 0px 0.1rem 1rem 0 rgba(0,0,0,0.2);
+    background: white;
+    border-radius: 0 0 0.5rem 0.5rem;
+
+    @include tablet(){
+        padding: 6rem $gutterTablet;
+    }
+    @include mobile(){
+        padding: 4rem $gutterMobile;
+    }
+
+    &--small{
+        min-height: 0;
+    }
+    &--green{
+        h1, h2{
+            color: $sc_green;
+        }      
+        border-bottom: 3px solid $sc_green; 
+    }
+    &--red{
+        h2{
+            color: $sc_red;
+        }        
+    }
+
+    &:last-child{
+        margin-bottom: 3rem;
+    }
+}

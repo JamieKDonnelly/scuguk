@@ -4,7 +4,7 @@ import Header from '../Header/header'
 import Footer from '../Footer/footer'
 import Loader from '../Loader/loader'
 
-import "./index.scss"
+import '../../theme/index.scss'
 
 const TemplateWrapper = ({ children }) => {
   return (

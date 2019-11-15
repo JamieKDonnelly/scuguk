@@ -1,5 +1,4 @@
 import React from "react";
-import Link from 'gatsby-plugin-transition-link';
 import TransitionLink from 'gatsby-plugin-transition-link';
 import transitionLinkSettings from '../TransitionLinkSettings/transitionLinkSettings'
 import Logo from '../Logo/logo';
@@ -13,8 +12,12 @@ const Header = () => (
         <Logo />
       </TransitionLink>
 
-      <nav className="nav">
-        <ul className="nav__items" role="navigation" aria-label="main-navigation">
+      <button className="header__mobileNav">
+        <span></span>
+      </button>
+
+      <nav className="header__nav">
+        <ul role="navigation" aria-label="main-navigation">
           <li>
             <TransitionLink activeClassName="active" to="/events" entry={transitionLinkSettings.entry} exit={transitionLinkSettings.exit} > 
               <span>Events</span>

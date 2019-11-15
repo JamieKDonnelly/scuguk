@@ -3,15 +3,13 @@ import { Link } from "gatsby";
 import Logo from '../Logo/logo'
 import './footer.scss'
 
+const dt = new Date();
+
 const Footer = () => (
   <footer className="footer">
     <div className="container">
 
-        <Link className="footer__logo" activeClassName="active" to="/">
-            <Logo />
-        </Link>
-
-        <nav className="nav">
+        {/* <nav className="nav">
             <ul className="nav__items" role="navigation" aria-label="main-navigation">
                 <li>
                     <Link activeClassName="active" to="/work">
@@ -22,7 +20,6 @@ const Footer = () => (
                     <Link activeClassName="active" to="/blog">
 
                     </Link>
-                    {/* <BlogNav /> */}
                 </li>
                 <li>
                     <Link activeClassName="active" to="/about">
@@ -30,9 +27,13 @@ const Footer = () => (
                     </Link>
                 </li>
             </ul>   
-        </nav> 
+        </nav>  */}
 
-        <p>Copyright &copy; Sitecore User Group UK</p>
+        <Link className="footer__logo" activeClassName="active" to="/">
+            <Logo />
+        </Link>
+
+        <p>Copyright &copy; {dt.getFullYear()} Sitecore User Group UK</p>
 
     </div>       
   </footer>

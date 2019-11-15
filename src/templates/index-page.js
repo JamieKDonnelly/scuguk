@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet"
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout/layout'
+import Hero from '../components/PageHero/pageHero'
+import Box from '../components/Box/box'
 
 export const IndexPageTemplate = ({
   heroImage,
@@ -10,22 +12,11 @@ export const IndexPageTemplate = ({
   intro
 }) => (
   <>
-    <section className="hero" style={{backgroundImage: `url(${heroImage})`}}>
-    </section>
-    <main>
-      <section className="theme__box theme__box--small">
-        <div className="container">
-          <h1>{heading}</h1>
-          <p>{intro}</p>
-        </div>
-      </section> 
-      <section className="theme__box">
-        <div className="container">
-          <h1>{heading}</h1>
-          <p>{intro}</p>
-        </div>
-      </section> 
-    </main>    
+    <Hero heroImage={heroImage} heading={heading} />
+    <main>      
+      <Box />
+      <Box />
+    </main>
   </>
 )
 

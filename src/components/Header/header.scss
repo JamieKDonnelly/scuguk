@@ -1,4 +1,4 @@
-@import '../settings/index.scss';
+@import '../../theme/settings/index.scss';
 
 .header {   
     padding: 1rem 0;
@@ -18,66 +18,113 @@
         display: block;
         max-width: 250px;
         width: 40vw;
+        svg{
+            width: 100%;
+            height: auto;
+        }
     }
 
-    svg{
-        width: 100%;
-        height: auto;
+    &__mobileNav{
+        display: none;
+        align-items: center;
+        width: 30px;
+        height: 40px;
+        padding: 0;
+        margin: 0;
+        margin-left: auto;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        color: white;
+        font-size: 1rem;
+        line-height: 1.2;
+        white-space: nowrap;
+        text-decoration: none;
+        cursor: pointer;
+        -webkit-appearance: button;
+        @include tablet(){
+            display: flex;
+        }
+        &:focus{
+            outline: none;
+        }
+        span{
+            display: block;
+            background: $sc_black;
+            width: 100%;
+            height: 3px;
+            position: relative;
+            &:after, &:before{
+                content: "";
+                width: 80%;
+                height: 3px;
+                position: absolute;
+                background: $sc_black;
+                right: 0;
+            }
+            &:after{
+                transform: translateY(-200%)
+            }
+            &:before{
+                transform: translateY(200%)
+            }
+        }
     }
+
+    &__nav{    
+        margin: auto;
+        margin-right: 0;
+        @include tablet(){
+            display: none;
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            li{
+                list-style-type: none;
+                padding: 0 2rem;
+            }
+            a{
+                display: block;
+                padding: 2rem 0;
+                text-decoration: none;
+                position: relative;
+                color: $sc_black;
+                @include transition();
+                span{
+                    display: block;
+                    position: relative;
+                    &:after{
+                        content: "";
+                        width: 0;
+                        height: 1px; 
+                        background: $sc_red;
+                        position: absolute;
+                        left: 50%;
+                        bottom: -3px;
+                        transform: translateX(-50%);
+                        @include transition();
+                    }
+                }
+                &:hover{
+                    text-shadow: 0px 0px 1px $sc_black;
+                    span:after{
+                        width: 100%;
+                    }
+                }
+                &.active{
+                    span:after{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }    
 
     .sticky &{
         padding: 2vh 0;
     }
 }
 
-.nav{    
-    margin: auto;
-    margin-right: 0;
-    @include tablet(){
-        display: none;
-    }
-    &__items{
-        display: flex;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-        li{
-            list-style-type: none;
-            padding: 0 2rem;
-        }
-        a{
-            display: block;
-            padding: 2rem 0;
-            text-decoration: none;
-            position: relative;
-            color: $sc_black;
-            @include transition();
-            span{
-                display: block;
-                position: relative;
-                &:after{
-                    content: "";
-                    width: 0;
-                    height: 1px; 
-                    background: $sc_red;
-                    position: absolute;
-                    left: 50%;
-                    bottom: -3px;
-                    transform: translateX(-50%);
-                    @include transition();
-                }
-            }
-            &:hover{
-                text-shadow: 0px 0px 1px $sc_black;
-                span:after{
-                    width: 100%;
-                }
-            }
-            &.active{
-                span:after{
-                    width: 100%;
-                }
-            }
-        }
-    }
-}

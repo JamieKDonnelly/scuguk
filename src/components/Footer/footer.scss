@@ -1,4 +1,10 @@
-footer{
+.footer{
     text-align: center;
     font-size: 0.7rem;
+    &__logo{
+        display: inline-block;
+        svg{
+            width: 200px;
+        }
+    }
 }

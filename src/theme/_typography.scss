@@ -1,3 +1,4 @@
+@import './settings/index.scss';
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 @font-face{
@@ -27,7 +28,7 @@ body, html{
         font-size: 96%;
     }
     @include mobile{
-        font-size: 92%; 
+        font-size: 94%; 
     }
 }
 
