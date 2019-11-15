@@ -1,8 +1,8 @@
 import React from 'react'
 import { Helmet } from "react-helmet"
 import { Link, graphql } from 'gatsby'
-import Layout from '../../components/Layout'
-import PageHero from '../../components/PageHero'
+import Layout from '../../components/Layout/layout'
+import PageHero from '../../components/PageHero/pageHero'
 
 export const ThanksPageTemplate = ({
   heroImage

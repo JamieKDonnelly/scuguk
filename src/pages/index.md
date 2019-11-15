@@ -1,8 +1,8 @@
 ---
 templateKey: 'index-page'
 meta:
-  metaTitle: Home.
-  metaDescription: Coming Soon.
+  metaTitle: Sitecore User Group UK
+  metaDescription: The official website for the Sitecore User Group UK
   metaKeywords: sitecore, user group, london, bristol, cardiff, manchester, leeds, uk, united kingdom, england, wales
   heroImage: 
   subTitle: Welcome to the Sitecore User Group UK
