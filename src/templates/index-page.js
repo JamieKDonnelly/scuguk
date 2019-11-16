@@ -9,13 +9,16 @@ import Box from '../components/Box/box'
 export const IndexPageTemplate = ({
   heroImage,
   heading,
-  intro
+  box1,
+  box2,
+  box3
 }) => (
   <>
     <Hero heroImage={heroImage} heading={heading} />
     <main>      
-      <Box />
-      <Box />
+      <Box heading={box1.heading} description={box1.description} background={box1.background} linkPath={box1.linkPath} linkText={box1.linkText} />
+      <Box heading={box2.heading} description={box2.description} background={box2.background} linkPath={box2.linkPath} linkText={box2.linkText} />
+      <Box heading={box3.heading} description={box3.description} background={box3.background} linkPath={box3.linkPath} linkText={box3.linkText} />
     </main>
   </>
 )
@@ -30,9 +33,11 @@ const IndexPage = ({ data }) => {
       </Helmet>
       <Layout>
         <IndexPageTemplate
-          intro={frontmatter.intro}
           heading={frontmatter.heading}
           heroImage={frontmatter.heroImage}
+          box1={frontmatter.box1}
+          box2={frontmatter.box2}
+          box3={frontmatter.box3}
         />
       </Layout>
     </>
@@ -40,9 +45,11 @@ const IndexPage = ({ data }) => {
 }
 
 IndexPageTemplate.propTypes = {
-  intro: PropTypes.string,
   heading: PropTypes.string,  
-  heroImage: PropTypes.string
+  heroImage: PropTypes.string,
+  box1: PropTypes.object,
+  box2: PropTypes.object,
+  box3: PropTypes.object
 }
 
 IndexPage.propTypes = {
@@ -64,8 +71,28 @@ export const pageQuery = graphql`
           metaDescription
         }
         heroImage
-        intro
         heading
+        box1{
+          heading
+          description
+          background
+          linkPath
+          linkText  
+        }
+        box2{
+          heading
+          description
+          background
+          linkPath
+          linkText  
+        }
+        box3{
+          heading
+          description
+          background
+          linkPath
+          linkText  
+        }
       }
     }
   }

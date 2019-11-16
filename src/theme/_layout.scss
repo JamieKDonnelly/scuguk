@@ -21,10 +21,6 @@ img{
     max-width: 100%;
 }
 
-.gatsby-image-wrapper{
-    width: 100%;
-}
-
 a{
     &:hover{
         cursor: pointer;
@@ -53,7 +49,7 @@ svg{
     margin: 0 auto;
     padding: 0 $gutterDesktop;
     position: relative;
-    overflow: auto;
+    overflow: visible;
     @include tablet(){
         padding: 0 $gutterTablet;
     }
@@ -70,4 +66,8 @@ svg{
 
 main{
     margin-top: -4rem;
+}
+
+.hide{
+    display: none !important;
 }

@@ -5,12 +5,12 @@ import Layout from '../components/Layout/layout'
 
 export const NotFoundPageTemplate = ({}) => (
   <>
-    <h2><span role="img" aria-label="Thinking face emoji">🤔</span></h2>
-    <p>We couldn't cook up a page for the URL you entered!</p>
-    <p>Please check the URL, or use the menu to find the page you're after.</p>
-    <Link className="btn" to="/">
-      Back to home
-    </Link>
+      <div class="container notFound" style={{textAlign: "center"}}>
+        <img style={{width: "620px"}} alt="Ghost getting abducted by aliens" src="/img/abduction-illustration.svg" />
+        <h3>
+          Looks like this page is a ghost that got abducted by aliens...
+        </h3>
+      </div>
   </>
  )
 
@@ -19,8 +19,8 @@ const NotFoundPage = ({}) => {
     <>   
       <Helmet>
         <meta charSet="utf-8" />
-        <title>404</title>
-        <meta name="description" content="This is the 404 page" />
+        <title>404: Not found</title>
+        <meta name="description" content="Abducted by aliens?" />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <Layout>
