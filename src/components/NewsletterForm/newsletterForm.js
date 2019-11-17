@@ -43,84 +43,72 @@ export default class NewsletterForm extends React.Component {
           data-netlify="true"
           data-netlify-honeypot="name"
           onSubmit={this.handleSubmit}
-        >
-          {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-          <input type="hidden" name="form-name" value="contact" />
-          <div className="field field--name">
-            <label>
-              Please enter your name:
-              <input name="name" onChange={this.handleChange} />
-            </label>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor={'email'}>
-              Email
-            </label>
-            <div className="control">
-              <input
-                className="input"
-                type={'email'}
-                name={'email'}
-                onChange={this.handleChange}
-                id={'email'}
-                required={true}
-              />
-            </div>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor={'name'}>
-              Full Name
-            </label>
-            <div className="control">
-              <input
-                className="input"
-                type={'text'}
-                name={'name'}
-                onChange={this.handleChange}
-                id={'name'}
-                required={true}
-              />
-            </div>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor={'company'}>
-              Company
-            </label>
-            <div className="control">
-              <input
-                className="input"
-                type={'text'}
-                name={'company'}
-                onChange={this.handleChange}
-                id={'company'}
-                required={true}
-              />
-            </div>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor={'jobTitle'}>
-              Job Title
-            </label>
-            <div className="control">
-              <input
-                className="input"
-                type={'text'}
-                name={'jobTitle'}
-                onChange={this.handleChange}
-                id={'jobTitle'}
-                required={true}
-              />
-            </div>
-          </div>
-          <div className="field">
-            <label className="label" htmlFor={'jobTitle'}>
-              Which region would you like updates for?
-            </label>
-            <div className="control">
-              
-              <label className="label" htmlFor={'london'}>
-                London
+        > 
+          <fieldset>
+            {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+            <div className="hide">
+              <label>
+                Please enter your name:
+                <input name="name" onChange={this.handleChange} />
               </label>
+              <input type="hidden" name="form-name" value="contact" />
+            </div>
+            <div>
+              <label htmlFor={'email'}>
+                Email
+              </label>
+                <input
+                  className="input"
+                  type={'email'}
+                  name={'email'}
+                  onChange={this.handleChange}
+                  id={'email'}
+                  required={true}
+                />
+            </div>
+            <div>
+              <label htmlFor={'name'}>
+                Full Name
+              </label>
+                <input
+                  className="input"
+                  type={'text'}
+                  name={'name'}
+                  onChange={this.handleChange}
+                  id={'name'}
+                  required={true}
+                />
+            </div>
+            <div>
+              <label htmlFor={'company'}>
+                Company
+              </label>
+                <input
+                  className="input"
+                  type={'text'}
+                  name={'company'}
+                  onChange={this.handleChange}
+                  id={'company'}
+                  required={true}
+                />
+            </div>
+            <div>
+              <label htmlFor={'jobTitle'}>
+                Job Title
+              </label>
+                <input
+                  className="input"
+                  type={'text'}
+                  name={'jobTitle'}
+                  onChange={this.handleChange}
+                  id={'jobTitle'}
+                  required={true}
+                />
+              </div>
+          </fieldset>
+          <fieldset>
+            <p>Which region would you like updates for?</p>
+            <div>
               <input
                 className="checkbox"
                 type={'checkbox'}
@@ -128,10 +116,11 @@ export default class NewsletterForm extends React.Component {
                 onChange={this.handleChange}
                 id={'london'}
               />
-              
-              <label className="label" htmlFor={'bristol'}>
-                Bristol
+              <label htmlFor={'london'}>
+                London
               </label>
+            </div>
+            <div>
               <input
                 className="checkbox"
                 type={'checkbox'}
@@ -139,10 +128,11 @@ export default class NewsletterForm extends React.Component {
                 onChange={this.handleChange}
                 id={'bristol'}
               />
-              
-              <label className="label" htmlFor={'cardiff'}>
-                Cardiff
+              <label htmlFor={'bristol'}>
+                Bristol
               </label>
+            </div>
+            <div>
               <input
                 className="checkbox"
                 type={'checkbox'}
@@ -150,10 +140,11 @@ export default class NewsletterForm extends React.Component {
                 onChange={this.handleChange}
                 id={'cardiff'}
               />
-              
-              <label className="label" htmlFor={'manchester'}>
-                Manchester
+              <label htmlFor={'cardiff'}>
+                Cardiff
               </label>
+            </div>
+            <div>
               <input
                 className="checkbox"
                 type={'checkbox'}
@@ -161,10 +152,11 @@ export default class NewsletterForm extends React.Component {
                 onChange={this.handleChange}
                 id={'manchester'}
               />
-
-              <label className="label" htmlFor={'leeds'}>
-                Leeds
+              <label htmlFor={'manchester'}>
+                Manchester
               </label>
+            </div>
+            <div>
               <input
                 className="checkbox"
                 type={'checkbox'}
@@ -172,13 +164,16 @@ export default class NewsletterForm extends React.Component {
                 onChange={this.handleChange}
                 id={'leeds'}
               />
+              <label htmlFor={'leeds'}>
+                Leeds
+              </label>
             </div>
-          </div>
-          <div className="field">
+          </fieldset>        
+          <div class="submit">
             <button className="button" type="submit">
               Submit
             </button>
-          </div>
+          </div>          
         </form>
       </section>
     )
