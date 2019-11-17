@@ -1,0 +1,34 @@
+.form{
+    width: 50%;
+    margin: 0 auto;
+    @include tablet{
+        width: 75%;
+    }
+    @include mobile{
+        width: 100%;
+    }
+}
+
+form{   
+    input, textarea{
+        padding: 15px;
+        font-family: inherit;
+        font-size: inherit;
+        border: solid 2px $sc_grey_medium;
+        box-shadow: none;
+    }
+    input{
+        width: 100%;            
+    }
+    textarea{
+        width: 100%;
+        height: 150px;
+        resize: vertical;
+    }
+    .field{
+        margin-top: 20px;
+        &--name{
+            display: none;
+        }
+    }
+}

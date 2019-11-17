@@ -1,59 +1,71 @@
-// import React from 'react'
-// import { Helmet } from 'react-helmet'
-// import PropTypes from 'prop-types'
-// import { graphql } from 'gatsby'
-// import Layout from '../components/Layout/layout'
+import React from 'react'
+import { Helmet } from "react-helmet"
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout/layout'
+import PageHero from '../components/PageHero/pageHero'
+import NewsletterForm from '../components/NewsletterForm/newsletterForm'
+import Box from '../components/Box/box'
 
-// export const AboutPageTemplate = ({
+export const NewsletterPageTemplate = ({
+  heading,
+  description
+}) => (
+  <>
+    <PageHero heading={heading} theme={"green"} description={description} small={true}/>    
+    <main>    
+        <Box theme={"white"} small={true}>
+            <NewsletterForm />
+        </Box>
+    </main>    
+  </>
+)
 
-// }) => (
-//   <main>   
-//     <div className="container">
-//       <h1>About Page</h1>
-//       <section></section>
-//       <section></section>
-//     </div>    
-//   </main>
-// )
+NewsletterPageTemplate.propTypes = {
+    heading: PropTypes.string,  
+    description: PropTypes.string
+}
 
-// AboutPageTemplate.propTypes = {
-// }
+const NewsletterPage = ({ data }) => {
+  const { frontmatter } = data.markdownRemark
+  return (
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{frontmatter.meta.metaTitle}</title>
+        <meta name="description" content={frontmatter.meta.metaDescription} />
+      </Helmet>
+      <Layout>
+        <NewsletterPageTemplate
+          heading={frontmatter.heading}
+          description={frontmatter.description}
+        />
+      </Layout>
+    </>
+  )
+}
 
-// const AboutPage = ({ data }) => {
-//   const { frontmatter } = data.markdownRemark
-//   return (
-//     <>
-//       <Helmet>
-//         <title>{frontmatter.meta.metaTitle}</title>
-//         <meta name="description" content={frontmatter.meta.metaDescription} />
-//         <meta name="robots" content="noindex, nofollow" />   
-//       </Helmet>
-//       <Layout>
-//         <AboutPageTemplate />
-//       </Layout>
-//     </>
-//   )
-// }
+NewsletterPage.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
+}
 
-// AboutPage.propTypes = {
-//   data: PropTypes.shape({
-//     markdownRemark: PropTypes.shape({
-//       frontmatter: PropTypes.object,
-//     }),
-//   }),
-// }
+export default NewsletterPage
 
-// export default AboutPage
-
-// export const pageQuery = graphql`
-//   query AboutPageTemplate {
-//     markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
-//       frontmatter {
-//         meta{
-//           metaTitle
-//           metaDescription
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query NewsletterPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "newsletter-page" } }) {
+      frontmatter {
+        heading
+        description
+        meta{
+          metaTitle
+          metaDescription
+        }
+      }      
+    }
+  }
+`

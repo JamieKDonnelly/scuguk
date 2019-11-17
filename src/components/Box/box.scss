@@ -1,6 +1,6 @@
 @import '../../theme/settings/index.scss';
 
-.theme__box{
+.box{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,14 +33,20 @@
         margin: 0;
     }
 
-    &--small{
-        //min-height: 0;
+    &.theme--small{
+        min-height: 0;
     }
-    &--green{
+
+    &.theme--green{
         border-bottom: 3px solid $sc_green; 
     }
-    &--red{
-     
+
+    &.theme--red{
+        border-bottom: 3px solid $sc_red; 
+    }
+
+    &.theme--white{
+        border-bottom: 3px solid $sc_grey_dark; 
     }
 
     &:last-child{

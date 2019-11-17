@@ -139,13 +139,8 @@
                         @include transition();
                     }
                 }
-                &:hover{
+                &:hover, &.active{
                     text-shadow: 0px 0px 1px $sc_black;
-                    span:after{
-                        width: 100%;
-                    }
-                }
-                &.active{
                     span:after{
                         width: 100%;
                     }

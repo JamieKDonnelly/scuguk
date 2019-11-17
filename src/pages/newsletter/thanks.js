@@ -4,11 +4,9 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../../components/Layout/layout'
 import PageHero from '../../components/PageHero/pageHero'
 
-export const ThanksPageTemplate = ({
-  heroImage
-}) => (
+export const ThanksPageTemplate = () => (
   <>
-    <PageHero Title="Thanks!" Image={heroImage} />
+    <PageHero Heading="Thanks!" />
     <div className="pageContent pageContent__noAnimate contact">  
       <div className="pageContent__inner">         
         <div className="theme__box theme__box--small">
@@ -33,31 +31,15 @@ const ThanksPage = ({ data }) => {
     <>    
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Thanks</title>
+        <title>Thanks!</title>
         <meta name="description" content="Thanks for getting in touch" />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <Layout>
-        <ThanksPageTemplate heroImage={frontmatter.heroImage} />
+        <ThanksPageTemplate />
       </Layout>
     </>
   )
 }
 
 export default ThanksPage
-
-// export const pageQuery = graphql`
-//   query ThanksPageTemplate {
-//     markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
-//       frontmatter {
-//         heroImage {
-//           childImageSharp {
-//             fluid(maxWidth: 1080, quality: 80) {
-//               ...GatsbyImageSharpFluid_withWebp_noBase64
-//             }
-//           }
-//         } 
-//       }
-//     }
-//   }
-// `
