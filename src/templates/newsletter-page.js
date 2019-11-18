@@ -5,19 +5,20 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout/layout'
 import PageHero from '../components/PageHero/pageHero'
 import NewsletterForm from '../components/NewsletterForm/newsletterForm'
-import Box from '../components/Box/box'
 
 export const NewsletterPageTemplate = ({
   heading,
   description
 }) => (
   <>
-    <PageHero heading={heading} theme={"green"} description={description} small={true}/>    
-    <main>    
-        <Box theme={"white"} small={true}>
-            <NewsletterForm />
-        </Box>
-    </main>    
+    <PageHero heading={heading} theme={"green"} small={true}/>    
+    <main>   
+      <div className="container">
+        <div className="theme__box theme__box--small theme__box--white">
+          <NewsletterForm />
+        </div>
+      </div>            
+    </main>
   </>
 )
 

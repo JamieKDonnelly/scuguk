@@ -1,6 +1,11 @@
 var proxy = require("http-proxy-middleware")
 
 module.exports = {
+  siteMetadata: {
+    title: `Sitecore User Group UK`,
+    description: `Sitecore User Group UK`,
+    author: `@steviemcg`
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-polyfill-io',

@@ -1,128 +1,149 @@
-// import React from 'react'
-// import { Helmet } from "react-helmet"
-// import PropTypes from 'prop-types'
-// import { graphql } from 'gatsby'
-// import Layout from '../components/Layout/layout'
-// import PageHero from '../components/PageHero/pageHero'
+import React from "react";
+import { Helmet } from "react-helmet";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout/layout";
+import PageHero from "../components/PageHero/pageHero";
+import '../components/EventsList/event.scss'
 
-// export const EventPageTemplate = ({
-//   heading,
-//   description,  
-//   additionalInfo,
-//   image,
-//   courses,
-//   fromPrice,
-//   showFromPrice
-// }) => {
-//   return (
-//     <> 
-//       <PageHero Title={heading} Image={image} />
-//       <div className="pageContent pageContent__noAnimate menuSingle">
-//         <div className="pageContent__inner"> 
+export const EventPageTemplate = ({
+  heading,
+  image,
+  sup,
+  details,
+  venue,
+  agenda,
+  speakers
+}) => {
+  return (
+    <>
+      <PageHero heading={heading} theme={"green"} small={true}/>   
+      <main>
+        <div className="container">
+          <article className="theme__box theme__box--small">
 
-//           <article className="theme__box theme__box--small">
-            
-//             <section className="container">   
-//               <h3>{description}</h3>
-//               <p className="menus__info"><span></span>{additionalInfo}</p>
-//               {courses.map((course) => (
-//                 <div className="menuRoll__course" key={course.title}>
-//                   <h3>{course.title}</h3>       
-//                   <ul className="menuRoll__courseItems">
-//                     {course.courseItems.map((courseItem) => (
-//                       <li key={courseItem.title}>{courseItem.title}</li>                    
-//                     ))}
-//                   </ul>       
-//                 </div>
-//               ))}
-//             </section>
+            <section className="event__hero">
+              <img src="#" alt="" />
+            </section>
 
-//             <div className={`menus__fromPrice menus__showFromPrice--${showFromPrice}`}>
-//               <p><span>from</span> £{fromPrice} <span>pp</span></p>
-//             </div>  
+            <div className="container">
+              <section>
+                <h2>{heading}</h2>
+                <p>{sup}</p>
+              </section>
+              <section>
+                <h2>Event Details</h2>
+                <p>{details.sponsors}</p>
+              </section>
+              >
+              <section>
+                <h2>Venue</h2>
+                <p>{venue.location}</p>
+                <p>{venue.deta}</p>
+              </section>
+              <section>
+                <h2>Agenda</h2>
+                <p>{agenda}</p>
+              </section>
+              <section>
+                <h2>Speakers</h2>
+                <ul>
+                  {speakers.map(speaker => (
+                    <li key={speaker.who}>
+                      <h3>{speaker.who}</h3>
+                      <p>{speaker.info}</p>
+                      <p>{speaker.description}</p>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </div>
 
-//           </article>
-          
-//         </div>
-//       </div> 
-//     </>
-//   )
-// }
+          </article>
+        </div>
+      </main>
+    </>
+  );
+};
 
-// EventPageTemplate.propTypes = {
-//   heading: PropTypes.string,
-//   description: PropTypes.string,  
-//   additionalInfo: PropTypes.string,
-//   image: PropTypes.object,
-//   course: PropTypes.object,
-//   fromPrice: PropTypes.number,
-//   showFromPrice: PropTypes.bool,
-// }
+EventPageTemplate.propTypes = {
+  heading: PropTypes.string,
+  image: PropTypes.string,
+  sup: PropTypes.string,
+  details: PropTypes.object,
+  venue: PropTypes.object,
+  agenda: PropTypes.string,
+  speakers: PropTypes.object
+};
 
-// const Event = ({ data }) => {
-//   const { markdownRemark: menu } = data
+const Event = ({ data }) => {
+  const { markdownRemark: event } = data;
 
-//   return (
-//     <>
-//       <Helmet>
-//         <meta charSet="utf-8" />
-//         <title>{menu.frontmatter.meta.metaTitle}</title>
-//         <meta name="description" content={menu.frontmatter.meta.metaDescription} />
-//       </Helmet>
-//       <Layout>
-//         <EventPageTemplate
-//           heading={menu.frontmatter.heading}
-//           description={menu.frontmatter.description}
-//           additionalInfo={menu.frontmatter.additionalInfo}
-//           image={menu.frontmatter.image}          
-//           courses={menu.frontmatter.courses}    
-//           fromPrice={menu.frontmatter.fromPrice}   
-//           showFromPrice={menu.frontmatter.showFromPrice}    
-//         />
-//       </Layout>
-//     </>
-    
-//   )
-// }
+  return (
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{event.frontmatter.meta.metaTitle}</title>
+        <meta
+          name="description"
+          content={event.frontmatter.meta.metaDescription}
+        />
+      </Helmet>
+      <Layout>
+        <EventPageTemplate
+          heading={event.frontmatter.heading}
+          image={event.frontmatter.image}
+          sup={event.frontmatter.sup}
+          details={event.frontmatter.details}
+          venue={event.frontmatter.venue}
+          agenda={event.frontmatter.agenda}
+          speakers={event.frontmatter.speakers}
+        />
+      </Layout>
+    </>
+  );
+};
 
-// Event.propTypes = {
-//   data: PropTypes.shape({
-//     markdownRemark: PropTypes.object,
-//   }),
-// }
+Event.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.object
+  })
+};
 
-// export default Event
+export default Event;
 
-// export const pageQuery = graphql`
-//   query EventByID($id: String!) {
-//     markdownRemark(id: { eq: $id }) {
-//       id
-//       html
-//       frontmatter {
-//         heading
-//         description
-//         additionalInfo
-//         image {
-//           childImageSharp {
-//             fluid(maxWidth: 1080, quality: 80) {
-//               ...GatsbyImageSharpFluid_withWebp_noBase64
-//             }
-//           }
-//           publicURL
-//         }
-//         fromPrice
-//         showFromPrice
-//         courses{
-//           title
-//           courseItems{
-//             title
-//           }
-//         } 
-//         meta{
-//           metaTitle
-//           metaDescription
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query EventByID($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      fields {
+        slug
+      }
+      frontmatter {
+        heading
+        sup
+        details {
+          sponsors
+          date
+          timings
+          food
+        }
+        venue {
+          location
+          details
+        }
+        agenda
+        speakers {
+          who
+          intro
+          description
+        }
+
+        meta {
+          metaTitle
+          metaDescription
+        }
+      }
+    }
+  }
+`;

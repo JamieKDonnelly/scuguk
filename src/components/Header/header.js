@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import TransitionLink from 'gatsby-plugin-transition-link';
-import transitionLinkSettings from '../TransitionLinkSettings/transitionLinkSettings'
+import { Link } from 'gatsby'
 import Logo from '../Logo/logo';
 import './header.scss';
 
@@ -11,9 +10,9 @@ function Header() {
     <header className={`header ${mobileNavActive ? "header--mobileNavActive" : ""}`}>
       <div className="container">
         
-        <TransitionLink className="header__logo" activeClassName="active" to="/" entry={transitionLinkSettings.entry} exit={transitionLinkSettings.exit} > 
+        <Link className="header__logo" activeClassName="active" to="/"> 
           <Logo />
-        </TransitionLink>
+        </Link>
 
         <button className="header__mobileNav" onClick={() => toggleMobileNav(!mobileNavActive)}>
           <span></span>
@@ -22,24 +21,24 @@ function Header() {
         <nav className="header__nav" >
           <ul role="navigation" aria-label="main-navigation">
             <li>
-              <TransitionLink activeClassName="active" to="/events" entry={transitionLinkSettings.entry} exit={transitionLinkSettings.exit} > 
+              <Link activeClassName="active" to="/events" > 
                 <span>Events</span>
-              </TransitionLink>
+              </Link>
             </li>
             <li>
-              <TransitionLink activeClassName="active" to="/newsletter" entry={transitionLinkSettings.entry} exit={transitionLinkSettings.exit} > 
+              <Link activeClassName="active" to="/newsletter" > 
                 <span>Newsletter</span>
-              </TransitionLink>
+              </Link>
             </li>
             <li>
-              <TransitionLink activeClassName="active" to="/sponsors" entry={transitionLinkSettings.entry} exit={transitionLinkSettings.exit} > 
+              <Link activeClassName="active" to="/sponsors" > 
                 <span>Sponsors</span>
-              </TransitionLink>
+              </Link>
             </li>
             <li>
-              <TransitionLink activeClassName="active" to="/contact" entry={transitionLinkSettings.entry} exit={transitionLinkSettings.exit} > 
+              <Link activeClassName="active" to="/contact" > 
                 <span>Contact</span>
-              </TransitionLink>
+              </Link>
             </li>
           </ul>   
         </nav> 

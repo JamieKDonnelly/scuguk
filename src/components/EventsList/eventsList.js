@@ -1,112 +1,117 @@
-// import React from 'react'
-// import PropTypes from 'prop-types'
-// import { Link, graphql, StaticQuery } from 'gatsby'
-// import BackgroundImage from 'gatsby-background-image'
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql, StaticQuery } from "gatsby";
 
-// class EventsList extends React.Component {
-//   render() {
-//     const { data } = this.props
-//     const { edges: menus } = data.allMarkdownRemark
+class EventsList extends React.Component {
+  render() {
+    const { data } = this.props;
+    const { edges: events } = data.allMarkdownRemark;
 
-//     return (
-//       <>
-//         {menus && menus.map(({ node: menu }) => (
-//           <article className="theme__box theme__box--small menus" key={menu.id}>
+    return (
+      <>
+        {events &&
+          events.map(({ node: event }) => (
+            <article
+              className="theme__box theme__box--small event"
+              key={event.id}
+            >
+              <section className="event__hero">
+                <img src="#" alt="" />
+              </section>
 
-//             <section className="menus__hero">
-//               <div className="backgroundContainer">
-//                 <BackgroundImage Tag="span"
-//                     fluid={menu.frontmatter.image.childImageSharp.fluid}
-//                 ></BackgroundImage>
-//               </div>
-//             </section>           
+              <div className="container">
+                <section>
+                  <h2>
+                    <Link to={event.fields.slug}>
+                      {event.frontmatter.heading}
+                    </Link>
+                  </h2>
+                  <p>{event.frontmatter.sup}</p>
+                </section>
 
-//             <section className="menus__content">
-//               <div className="container">  
-//                   <h2>
-//                     <Link to={menu.fields.slug}>
-//                       {menu.frontmatter.heading}
-//                     </Link>
-//                   </h2>
-//                 <h3>{menu.frontmatter.description}</h3>
-//                 <p className="menus__info"><span></span>{menu.frontmatter.additionalInfo}</p>  
-//                 {menu.frontmatter.courses.map((course) => (
-//                   <div className="menuRoll__course" key={course.title}>
-//                     <h3>
-//                       {course.title}
-//                     </h3>       
-//                     <ul className="menuRoll__courseItems">
-//                       {course.courseItems.map((courseItem) => (
-//                         <li key={courseItem.title}>
-//                           {courseItem.title}
-//                         </li>                    
-//                       ))}
-//                     </ul>
-//                   </div>
-//                 ))}
-//                 <div className={`menus__fromPrice menus__showFromPrice--${menu.frontmatter.showFromPrice}`}>
-//                   <p><span>from</span> £{menu.frontmatter.fromPrice} <span>pp</span></p>
-//                 </div> 
+                {/* <section>
+                        <h2>Event Details</h2>
+                        <p>{event.frontmatter.details.sponsors}</p>
+                    </section>> */}
 
-//               </div>           
-//             </section> 
+                {/* <section>
+                        <h2>Venue</h2>
+                        <p>{event.frontmatter.venue.location}</p>
+                        <p>{event.frontmatter.venue.deta}</p>
+                    </section> */}
 
-//           </article>
-//         ))}
-//       </>
-//     )
-//   }
+                {/* <section>
+                        <h2>Agenda</h2>
+                        <p>{event.frontmatter.agenda}</p>
+                    </section> */}
 
-// }
+                {/* <section>
+                        <h2>Speakers</h2>
+                        <ul>
+                            {event.frontmatter.speakers.map((speaker) => (
+                                <li key={speaker.who}>
+                                    <h3>{speaker.who}</h3>
+                                    <p>{speaker.info}</p>
+                                    <p>{speaker.description}</p>
+                                </li>                    
+                            ))}
+                        </ul>
+                    </section>                     */}
+              </div>
+            </article>
+          ))}
+      </>
+    );
+  }
+}
 
-// EventsList.propTypes = {
-//   data: PropTypes.shape({
-//     allMarkdownRemark: PropTypes.shape({
-//       edges: PropTypes.array,
-//     }),
-//   }),
-// }
+EventsList.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array
+    })
+  })
+};
 
-// export default () => (
-//   <StaticQuery
-//     query={graphql`
-//       query EventsListQuery {
-//         allMarkdownRemark(
-//           filter: { frontmatter: { templateKey: { eq: "menu-page" } } }
-//         ) {
-//           edges {
-//             node {
-//               excerpt(pruneLength: 400)
-//               id
-//               fields {
-//                 slug
-//               }
-//               frontmatter {
-//                 heading
-//                 description
-//                 additionalInfo
-//                 image {
-//                   childImageSharp {
-//                     fluid(maxWidth: 1080, quality: 75) {
-//                       ...GatsbyImageSharpFluid_withWebp_noBase64
-//                     }
-//                   }
-//                   publicURL
-//                 } 
-//                 fromPrice
-//                 showFromPrice
-//                 courses{
-//                   title
-//                   courseItems{
-//                     title
-//                   }
-//                 } 
-//               }
-//             }
-//           }
-//         }
-//       }
-//     `}
-//     render={(data, count) => <MenuRoll data={data} count={count} />}
-//   />
-// )
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query EventsListQuery {
+        allMarkdownRemark(
+          filter: { frontmatter: { templateKey: { eq: "event-page" } } }
+        ) {
+          edges {
+            node {
+              excerpt(pruneLength: 400)
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                heading
+                sup
+                details {
+                  sponsors
+                  date
+                  timings
+                  food
+                }
+                venue {
+                  location
+                  details
+                }
+                agenda
+                speakers {
+                  who
+                  intro
+                  description
+                }
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => <EventsList data={data} />}
+  />
+);

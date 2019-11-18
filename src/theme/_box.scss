@@ -1,12 +1,10 @@
-@import '../../theme/settings/index.scss';
-
-.box{
+.theme__box{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 1200px;
     max-width: 100%;      
-    min-height: 80vh; 
+    min-height: 70vh; 
     margin: 0 auto;
     margin-bottom: 3rem;
     padding: 6rem $gutterDesktop;
@@ -17,35 +15,35 @@
 
     .button{
         margin-top: 2rem;
-        margin-right: auto;
+        margin-left: auto;
     }
 
     @include tablet(){
         padding: 4rem $gutterTablet;
-        min-height: 70vh; 
+        min-height: 60vh; 
     }
     @include mobile(){
         padding: 2rem $gutterMobile;
-        min-height: 60vh; 
+        min-height: 50vh; 
     }
 
     h2{
         margin: 0;
     }
 
-    &.theme--small{
+    &--small{
         min-height: 0;
     }
 
-    &.theme--green{
+    &--green{
         border-bottom: 3px solid $sc_green; 
     }
 
-    &.theme--red{
+    &--red{
         border-bottom: 3px solid $sc_red; 
     }
 
-    &.theme--white{
+    &--white{
         border-bottom: 3px solid $sc_grey_dark; 
     }
 
