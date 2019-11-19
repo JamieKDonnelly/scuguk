@@ -28,7 +28,6 @@ export const EventPageTemplate = ({
 
             <div className="container">
               <section>
-                <h2>{heading}</h2>
                 <p>{sup}</p>
               </section>
               <section>

@@ -5,6 +5,7 @@ import './header.scss';
 
 function Header() {
   const [mobileNavActive, toggleMobileNav] = useState(false);
+  const handleClick = () => {toggleMobileNav(!mobileNavActive)}
 
   return (
     <header className={`header ${mobileNavActive ? "header--mobileNavActive" : ""}`}>
@@ -14,7 +15,7 @@ function Header() {
           <Logo />
         </Link>
 
-        <button className="header__mobileNav" onClick={() => toggleMobileNav(!mobileNavActive)}>
+        <button className="header__mobileNav" onClick={handleClick}>
           <span></span>
         </button>
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import anime from 'animejs'
 import './logo.scss'
 
 class Logo extends React.Component {
