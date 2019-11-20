@@ -1,12 +1,13 @@
 {
-  "name": "sitecore-user-group-uk",
-  "description": "Sitecore User Group UK",
+  "name": "scuguk",	
+  "description": "Sitecore User Group UK",	 
   "version": "1.0.0",
-  "author": "Steve Mcgill, Jamie Donnelly",
+  "author": "Steve McGill <steve@scug.co.uk>",	
   "respository": "https://github.com/steviemcg/scuguk",
   "keywords": [
     "Sitecore",
-    "User Group",
+    "User",
+    "Group",
     "UK"
   ],
   "main": "n/a",
