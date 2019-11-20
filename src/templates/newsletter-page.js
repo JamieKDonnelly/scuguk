@@ -15,7 +15,10 @@ export const NewsletterPageTemplate = ({
     <main>   
       <div className="container">
         <div className="theme__box theme__box--small theme__box--white">
-          <NewsletterForm />
+          <div className="form">
+            <p>{description}</p>
+            <NewsletterForm/>
+          </div>
         </div>
       </div>            
     </main>
