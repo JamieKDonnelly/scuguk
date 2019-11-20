@@ -1,8 +1,8 @@
 ---
 templateKey: 'events-list-page'
 meta:
-  metaTitle: JamieKDonnelly - Coming soon.
-  metaDescription: Coming Soon.
+  metaTitle: Events List
+  metaDescription: Events List
 heading: Events
 heroImage: ""
 ---
