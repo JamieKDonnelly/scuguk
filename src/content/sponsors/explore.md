@@ -1,5 +1,5 @@
 ---
-templateKey: sponsor
+contentType: sponsor
 title: Explore Group
 image: explore.svg
 website: https://www.explore-group.com/

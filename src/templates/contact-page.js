@@ -3,12 +3,12 @@ import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout/layout";
-import PageHero from "../components/PageHero/pageHero";
+import Hero from "../components/Hero/hero";
 import ContactForm from "../components/ContactForm/contactForm";
 
 export const ContactPageTemplate = ({ heading, description }) => (
   <>
-    <PageHero heading={heading} theme={"green"} small={true} />
+    <Hero heading={heading} theme={"green"} small={true} />
     <main>
       <div className="container">
         <div className="theme__box theme__box--small theme__box--white">

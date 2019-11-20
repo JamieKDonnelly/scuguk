@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout/layout'
-import PageHero from '../components/PageHero/pageHero'
+import Hero from '../components/Hero/hero'
 import EventsList from '../components/EventsList/eventsList'
 
 export const EventsListPageTemplate = ({
@@ -11,7 +11,7 @@ export const EventsListPageTemplate = ({
   heading
 }) => (
   <>
-    <PageHero heading={heading} theme={"green"} small={true}/>   
+    <Hero heading={heading}/>   
     <main>
         <div class="container">
             <EventsList />

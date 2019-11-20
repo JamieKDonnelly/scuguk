@@ -32,11 +32,6 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link activeClassName="active" to="/sponsors" > 
-                <span>Sponsors</span>
-              </Link>
-            </li>
-            <li>
               <Link activeClassName="active" to="/contact" > 
                 <span>Contact</span>
               </Link>
@@ -49,15 +44,6 @@ function Header() {
 }
 
 export default Header
-
-// if(typeof window !== 'undefined'){
-
-//   window.addEventListener('scroll', function(){
-//     let doc = document.documentElement;
-//     (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0) > 100 ? 
-//       document.body.classList.add('sticky') : document.body.classList.remove('sticky');
-//   });
-// }
 
 
   

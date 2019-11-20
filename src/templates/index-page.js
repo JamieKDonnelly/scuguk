@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet"
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout/layout'
-import Hero from '../components/PageHero/pageHero'
 import Box from '../components/Box/box'
+import FullScreenHero from '../components/FullScreenHero/fullScreenHero'
 
 export const IndexPageTemplate = ({
   heroImage,
@@ -14,8 +14,8 @@ export const IndexPageTemplate = ({
   box3
 }) => (
   <>
-    <Hero heroImage={heroImage} heading={heading} />
-    <main>      
+    <FullScreenHero heroImage={heroImage} heading={heading} />
+    <main> 
       <Box theme={"green"} heading={box1.heading} description={box1.description} linkPath={box1.linkPath} linkText={box1.linkText} />
       <Box theme={"red"} heading={box2.heading} description={box2.description} linkPath={box2.linkPath} linkText={box2.linkText} />
       <Box theme={"white"} heading={box3.heading} description={box3.description} linkPath={box3.linkPath} linkText={box3.linkText} />

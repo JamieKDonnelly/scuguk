@@ -1,5 +1,4 @@
 import React from 'react'
-import './logoCircle.scss'
 
 const LogoCircle = () => {
   return(

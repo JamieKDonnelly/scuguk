@@ -1,5 +1,5 @@
 ---
-templateKey: sponsor
+contentType: sponsor
 title: Sagittarius
 image: sagittarius.svg
 website: https://sagittarius.agency/

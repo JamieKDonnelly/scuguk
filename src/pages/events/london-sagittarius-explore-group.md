@@ -1,9 +1,5 @@
 ---
 templateKey: 'event-page'
-meta:
-  metaTitle: JamieKDonnelly - Coming soon.
-  metaDescription: Coming Soon.
-  metaKeywords: sitecore, user group, london, sagittarius, explore group
 heading: London Sagittarius Explore Group 
 sup: London’s Technical User Group is back with post-symposium goodness! 🙌🏼
 details:
@@ -39,4 +35,8 @@ speakers:
       So you've installed XC, now what?
     description: >
       This session covers the gap we currently have with existing XC enablement. We have lots of documentation covering how to install XC locally and also how to develop plug-ins, but there are some steps that need to be performed between these two actions. In this session, we will cover how to set up an XC solution to follow Helix guidelines. This solution structure will contain code that needs to be published to each of the required publishing targets (XP & XC). See how to use Azure DevOps to create a simple CI pipeline to deploy this solution out to an Azure PaaS environment. 
+meta:
+  metaTitle: London Sagittarius Explore Group 
+  metaDescription: London’s Technical User Group is back with post-symposium goodness!
+  metaKeywords: sitecore, user group, london, sagittarius, explore group
 ---

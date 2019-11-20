@@ -1,5 +1,5 @@
 ---
-templateKey: sponsor
+contentType: sponsor
 title: Valtech
 image: valtech.svg
 website: https://www.valtech.com/

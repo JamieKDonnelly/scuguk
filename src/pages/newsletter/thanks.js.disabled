@@ -2,11 +2,11 @@ import React from 'react'
 import { Helmet } from "react-helmet"
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/Layout/layout'
-import PageHero from '../../components/PageHero/pageHero'
+import Hero from '../../components/Hero/hero'
 
 export const ThanksPageTemplate = () => (
   <>
-    <PageHero Heading="Thanks!" />
+    <Hero Heading="Thanks!" />
     <div className="pageContent pageContent__noAnimate contact">  
       <div className="pageContent__inner">         
         <div className="theme__box theme__box--small">

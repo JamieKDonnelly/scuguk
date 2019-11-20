@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout/layout";
-import PageHero from "../components/PageHero/pageHero";
+import Hero from "../components/Hero/hero";
 import '../components/EventsList/event.scss'
 
 export const EventPageTemplate = ({
@@ -17,7 +17,7 @@ export const EventPageTemplate = ({
 }) => {
   return (
     <>
-      <PageHero heading={heading} theme={"green"} small={true}/>   
+      <Hero heading={heading}/>   
       <main>
         <div className="container">
           <article className="theme__box theme__box--small">

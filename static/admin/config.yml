@@ -19,3 +19,38 @@ collections:
               {label: Meta Description, name: metaDescription, widget: text},
               {label: Robots, name: robots, widget: text}
           ]}
+  - name: "events"
+    label: "Events"
+    label_singular: "Event"    
+    folder: "src/pages/events/"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event-page"}
+      - {label: "Heading", name: "heading", widget: "string"}
+      - {label: "Sup", name: "Sup", widget: "text"}
+      - {label: "Details", name: "details", widget: "object", collapsed: false, fields: [
+          {label: Sponsors, name: sponsors, widget: string},
+          {label: Date, name: date, widget: text}
+          {label: Timings, name: timings, widget: text}
+          {label: Food, name: food, widget: text}
+      ]}
+      - {label: "Venue", name: "venus", widget: "object", collapsed: false, fields: [
+          {label: Sponsors, name: location, widget: string},
+          {label: Details, name: details, widget: text}
+      ]}
+      - {label: "Agenda", name: "agenda", widget: "markdown"}
+      - {label: "Speakers", name: "speakers", widget: "object", collapsed: false, fields: [
+          {label: Sponsors, name: location, widget: string},
+          {label: Details, name: details, widget: text}
+      ]}
+      - {label: Speakers Items, name: courseItems, widget: list, fields: [
+          {label: Who, name: who, widget: string}
+          {label: Intro, name: intro, widget: string}
+          {label: Description, name: description, widget: markdown}
+      ]}
+      - {label: Google Meta Data, name: meta, widget: object, collapsed: true, fields: [
+          {label: Meta Title, name: metaTitle, widget: text},
+          {label: Meta Description, name: metaDescription, widget: text},
+          {label: Robots, name: robots, widget: text}
+      ]}
+---
