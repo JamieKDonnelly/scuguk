@@ -1,6 +1,6 @@
 ---
 templateKey: 'index-page'
-heroImage: img/meetup.jpg
+heroImage: img/home_hero.jpg
 heading: Welcome to the Sitecore User Group UK
 box1:
   heading: About us
