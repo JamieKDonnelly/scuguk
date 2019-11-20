@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from 'gatsby'
-import Logo from '../Logo/logo';
+import Logo from '../Logo/Logo';
 import './header.scss';
 
 function Header() {

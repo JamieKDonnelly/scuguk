@@ -81,7 +81,6 @@ const Event = ({ data }) => {
   return (
     <>
       <Helmet>
-        <meta charSet="utf-8" />
         <title>{event.frontmatter.meta.metaTitle}</title>
         <meta
           name="description"

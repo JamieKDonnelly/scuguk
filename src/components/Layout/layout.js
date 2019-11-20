@@ -2,7 +2,6 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Header from '../Header/header'
 import Footer from '../Footer/footer'
-import Loader from '../Loader/loader'
 
 import '../../theme/index.scss'
 
@@ -26,12 +25,10 @@ const TemplateWrapper = ({ children }) => {
         />
 
         <meta charSet="utf-8" />
-
         <meta name="robots" content="noindex, nofollow" />
         
       </Helmet>
-      <Header />
-      <Loader/>     
+      <Header />   
       {children}
       <Footer />
     </>

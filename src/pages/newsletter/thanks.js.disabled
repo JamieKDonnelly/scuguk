@@ -30,7 +30,6 @@ const ThanksPage = ({ data }) => {
   return (
     <>    
       <Helmet>
-        <meta charSet="utf-8" />
         <title>Thanks!</title>
         <meta name="description" content="Thanks for getting in touch" />
         <meta name="robots" content="noindex, nofollow" />

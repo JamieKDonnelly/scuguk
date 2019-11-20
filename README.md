@@ -15,14 +15,6 @@ It follows the [JAMstack architecture](https://jamstack.org) by using Git as a s
 - Node v10.16.0 or higher
 - [Gatsby CLI](https://www.gatsbyjs.org/docs/)
 
-## Getting Started (Recommended)
-
-Netlify CMS can run in any frontend web environment, but the quickest way to try it out is by running it on a pre-configured starter site with Netlify. The example here is the Kaldi coffee company template (adapted from [One Click Hugo CMS](https://github.com/netlify-templates/one-click-hugo-cms)). Use the button below to build and deploy your own copy of the repository:
-
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/gatsby-starter-netlify-cms&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
-
-After clicking that button, you’ll authenticate with GitHub and choose a repository name. Netlify will then automatically create a repository in your GitHub account with a copy of the files from the template. Next, it will build and deploy the new site on Netlify, bringing you to the site dashboard when the build is complete. Next, you’ll need to set up Netlify’s Identity service to authorize users to log in to the CMS.
-
 ### Access Locally
 ```
 Fork from https://github.com/steviemcg/scuguk
@@ -44,9 +36,6 @@ $ npm run build
 $ npm run serve
 ```
 
-### Setting up the CMS
-Follow the [Netlify CMS Quick Start Guide](https://www.netlifycms.org/docs/quick-start/#authentication) to set up authentication, and hosting.
-
 ## Debugging
 Windows users might encounter ```node-gyp``` errors when trying to npm install.
 To resolve, make sure that you have both Python 2.7 and the Visual C++ build environment installed.
@@ -57,10 +46,14 @@ npm install --global --production windows-build-tools
 
 [Full details here](https://www.npmjs.com/package/node-gyp 'NPM node-gyp page')
 
-## Purgecss
-This plugin uses [gatsby-plugin-purgecss](https://www.gatsbyjs.org/packages/gatsby-plugin-purgecss/) and [bulma](https://bulma.io/). The bulma builds are usually ~170K but reduced 90% by purgecss.
+# Developer Workflow
 
-# CONTRIBUTING
+## Create a new page
+- Create a new Markdown file in src\pages
+- Inside the Markdown file, assign a page template with the `templateKey` value. This should correspond to the template you want to use from `src\templates`
+
+
+# Contributing
 
 Contributions are always welcome, no matter how large or small. Before contributing,
 please read the [code of conduct](CODE_OF_CONDUCT.md).

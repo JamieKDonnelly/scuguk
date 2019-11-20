@@ -90,7 +90,7 @@ export default class contactForm extends React.Component {
               />
             </div>
         </fieldset>
-        <div class="submit">
+        <div className="submit">
           <button className="button" type="submit">
             Submit
           </button>

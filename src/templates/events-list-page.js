@@ -31,7 +31,6 @@ const EventsListPage = ({ data }) => {
   return (
     <>    
       <Helmet>
-        <meta charSet="utf-8" />
         <title>{frontmatter.meta.metaTitle}</title>
         <meta name="description" content={frontmatter.meta.metaDescription} />
       </Helmet>
