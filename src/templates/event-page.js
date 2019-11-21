@@ -7,7 +7,7 @@ import Hero from "../components/Hero/hero";
 import '../components/EventsList/event.scss'
 
 export const EventPageTemplate = ({
-  heading,
+  title,
   image,
   sup,
   details,
@@ -17,7 +17,7 @@ export const EventPageTemplate = ({
 }) => {
   return (
     <>
-      <Hero heading={heading}/>   
+      <Hero heading={title}/>   
       <main>
         <div className="container">
           <article className="theme__box theme__box--small">

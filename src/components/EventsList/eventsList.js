@@ -23,7 +23,7 @@ class EventsList extends React.Component {
                 <section>
                   <h2>
                     <Link to={event.fields.slug}>
-                      {event.frontmatter.heading}
+                      {event.frontmatter.title}
                     </Link>
                   </h2>
                   <p>{event.frontmatter.sup}</p>
@@ -87,7 +87,7 @@ export default () => (
                 slug
               }
               frontmatter {
-                heading
+                title
                 sup
                 details {
                   sponsors
