@@ -1,5 +1,5 @@
 import React from "react";
-import LogoCircle from "../Logo/LogoCircle";
+import LogoCircle from "../Logo/logoCircle";
 import "./hero.scss";
 
 const Hero = props => (

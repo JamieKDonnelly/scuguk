@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import Logo from "../Logo/Logo";
+import Logo from "../Logo/logo";
 import "./footer.scss";
 
 const dt = new Date();
