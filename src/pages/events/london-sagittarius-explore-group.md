@@ -1,6 +1,6 @@
 ---
 templateKey: 'event-page'
-heading: London Sagittarius Explore Group 
+title: London Sagittarius Explore Group 
 sup: London’s Technical User Group is back with post-symposium goodness! 🙌🏼
 details:
   sponsors: Sagittarius

@@ -35,7 +35,7 @@ collections:
     create: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event-page"}
-      - {label: "Heading", name: "heading", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Sup", name: "sup", widget: "text"}
       - {label: "Details", name: "details", widget: "object", collapsed: false, fields: [
           {label: Sponsors, name: sponsors, widget: string},
