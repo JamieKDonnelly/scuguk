@@ -8,8 +8,8 @@ details:
   timings: Arrival from 6 pmPresentations from 6:30pm
   food: Beer & pizzas provide by our friends at Explore 🍺🍕
 venue:
-  - location: Huckletree Shoreditch
-  - details: Enter via the main Alphabeta Building reception (14-18 Finsbury square) You will be shown down the central staircase, which goes straight into our event space. ✨
+  location: Huckletree Shoreditch
+  details: Enter via the main Alphabeta Building reception (14-18 Finsbury square) You will be shown down the central staircase, which goes straight into our event space. ✨
 agenda: >
   6:00 - arrival
   6:30 - first speaker

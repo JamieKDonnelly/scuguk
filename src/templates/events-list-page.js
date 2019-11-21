@@ -7,7 +7,6 @@ import Hero from '../components/Hero/hero'
 import EventsList from '../components/EventsList/eventsList'
 
 export const EventsListPageTemplate = ({
-  heroImage,
   heading
 }) => (
   <>

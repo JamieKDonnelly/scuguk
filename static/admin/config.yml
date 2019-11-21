@@ -19,10 +19,19 @@ collections:
               {label: Meta Description, name: metaDescription, widget: text},
               {label: Robots, name: robots, widget: text}
           ]}
+      - file: "src/pages/events.md"
+        label: "Events Listing Page"
+        name: "events-listing-page"
+        fields:
+          - {label: Google Meta Data, name: meta, widget: object, collapsed: true, fields: [
+              {label: Meta Title, name: metaTitle, widget: text},
+              {label: Meta Description, name: metaDescription, widget: text},
+              {label: Robots, name: robots, widget: text}
+          ]}
   - name: "events"
     label: "Events"
     label_singular: "Event"    
-    folder: "src/events"
+    folder: "src/pages/events"
     create: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event-page"}
